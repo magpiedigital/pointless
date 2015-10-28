@@ -1,0 +1,1 @@
+var pointless = angular.module('pointless', []);

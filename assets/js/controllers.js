@@ -1,9 +1,11 @@
-pointless.controller('introController', function($scope) {
+pointless.controller('introController', function($scope, $localStorage) {
     $scope.pageClass = 'intro-page';
+    $scope.$storage = $localStorage;
 });
 
-pointless.controller('mainController', function($scope) {
+pointless.controller('mainController', function($scope, $localStorage) {
     $scope.pageClass = 'main-page';
+    $scope.$storage = $localStorage;
 });
 
 pointless.controller('artController', function($scope) {

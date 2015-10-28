@@ -1,10 +1,14 @@
-var pointless = angular.module('pointless', ['ngRoute', 'ngAnimate']);
+var pointless = angular.module('pointless', ['ngRoute', 'ngAnimate', 'ngStorage']);
 
 pointless.config(function($routeProvider) {
 
+	var introURL = 'partials/welcome.html'
+
+	if(!localStorage.getItem('ngStorage-userName')) { introURL = 'partials/intro.html'}
+
 	$routeProvider
 		.when('/', {
-			templateUrl: 'partials/intro.html',
+			templateUrl: introURL,
 			controller: 'introController'
 		})
 		.when('/main', {
@@ -27,4 +31,5 @@ pointless.config(function($routeProvider) {
 			templateUrl: 'partials/relationships.html',
 			controller: 'relationshipsController'
 		});
+
 });

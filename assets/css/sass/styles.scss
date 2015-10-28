@@ -14,13 +14,15 @@ del{text-decoration:line-through}
 abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}
 table{border-collapse:collapse;border-spacing:0}
 hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}
-input,select{vertical-align:middle}
+input,select{vertical-align:middle; font-size:1em;}
 textarea:focus, input:focus{outline: 0}
 
 // SCSS Variables
 $font-stack: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
 $dark: #202020;
 $light: #F7F7F7;
+
+/* Elements */
 
 html, body {
 	height: 100%;
@@ -33,6 +35,10 @@ body {
 	font-weight: 400;
 }
 
+h1 {
+	font-size: 4em;
+}
+
 a {
 	background-color: $light;
 	transition: all 0.2s;
@@ -42,49 +48,11 @@ a {
 	}
 }
 
-::selection {
+/* Classes */
+
+::selection { /* highlight styling */
 	background: $dark;
 	color: white;
-}
-
-.btn {
-	display: inline-block;
-	color: black;
-	text-decoration: none;
-	padding: 2px 10px;
-	transition: all 0.2s;
-	cursor: pointer;
-	&:hover {
-		background-color: $dark;
-		color: white;
-	}
-}
-
-#entername {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	text-align: center;
-	input {
-		border: none;
-		background-color: $light;
-		display: block;
-		margin: 0 auto;
-		font-size: 2em;
-		text-transform: lowercase;
-		text-align: center;
-	}
-	#name {
-		padding: 2px 0.2em;
-		border-bottom: 1px dashed black;
-		width: 10em;
-	}
-	#enter {
-		margin: 0 auto;
-		margin-top: 10px;
-		font-size: 2em;
-	}
 }
 
 .page {
@@ -92,11 +60,57 @@ a {
 	height: 100%;
 }
 
-.intro-page { background:#00D0BC; color:#00907c; }
-.main-page { background:#E59400; color:#a55400; }
-.art-page { background:#ffa6bb; color:#9e0000; }
+.btn {
+	display: inline-block;
+	color: black;
+	text-decoration: none;
+	padding: 2px 10px 5px 10px;
+	transition: all 0.4s;
+	cursor: pointer;
+	border-radius: 5px;
+	&:hover {
+		background-color: $dark;
+		color: white;
+	}
+}
 
-.ng-enter { animation: scaleUp 0.5s both ease-in; z-index: 9999; }
+.center-fixed {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.text-center {
+	text-align: center;
+}
+
+/* Sections */
+
+.intro-page {
+	input {
+		border: none;
+		background-color: $light;
+		display: block;
+		margin: 0 auto;
+		text-transform: lowercase;
+		text-align: center;
+		font-size: 1em;
+	}
+	#name {
+		padding: 2px 0.2em;
+		border-bottom: 1px dashed black;
+		width: 10em;
+	}
+	#enter {
+		font-size: 3em;
+		margin: 0 auto;
+		margin-top: 20px;
+	}
+}
+
+.ng-enter { transition: 2.5s ease; opacity: 0; }
+.ng-enter-active {opacity:1;}
 
 /* ANIMATIONS
 ============================================================================= */

@@ -70,6 +70,12 @@ textarea:focus, input:focus {
   outline: 0; }
 
 /* Elements */
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
 html, body {
   height: 100%;
   font-size: 100%; }
@@ -84,7 +90,7 @@ h1 {
 
 a {
   background-color: #F7F7F7;
-  transition: background-color 0.2s, color 0.2s; }
+  transition: all 0.2s; }
   a:hover {
     background-color: #202020;
     color: white; }
@@ -114,33 +120,66 @@ a {
   transform: translate(-50%, -50%); }
 
 .nav {
+  background-color: transparent;
   position: fixed;
-  background-color: #202020;
   color: white;
   text-decoration: none;
-  text-align: center;
-  width: 100%; }
+  text-align: center; }
   .nav:hover {
-    background-color: #F7F7F7;
     color: black;
+    background-color: transparent;
     z-index: 1; }
 
 .nav-top {
-  top: 0; }
+  top: 0;
+  border-top: 20px solid #202020;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  width: 100%; }
+  .nav-top:hover {
+    border-top: 20px solid #F7F7F7; }
+  .nav-top div {
+    margin-top: -20px; }
 
 .nav-right {
-  top: 100%;
   right: 0;
-  transform: rotate(90deg);
-  transform-origin: top right; }
+  height: 100%;
+  border-right: 20px solid #202020;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  width: 0; }
+  .nav-right:hover {
+    border-right: 20px solid #F7F7F7; }
+  .nav-right div {
+    position: fixed;
+    top: 50%;
+    right: -30px;
+    transform: translate(-50%, -50%) rotate(90deg); }
 
 .nav-bot {
-  bottom: 0; }
+  bottom: 0;
+  border-bottom: 20px solid #202020;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  height: 0;
+  width: 100%; }
+  .nav-bot:hover {
+    border-bottom: 20px solid #F7F7F7; }
 
 .nav-left {
-  top: 100%;
-  transform: rotate(-90deg);
-  transform-origin: top left; }
+  left: 0;
+  height: 100%;
+  border-left: 20px solid #202020;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  width: 0; }
+  .nav-left:hover {
+    border-left: 20px solid #F7F7F7; }
+  .nav-left div {
+    position: fixed;
+    top: 50%;
+    left: 10px;
+    transform: translate(-50%, -50%) rotate(-90deg); }
 
 .page {
   width: 100%;

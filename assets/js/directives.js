@@ -1,17 +1,5 @@
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 // == LEGACY == //
 
 // // Changes width of rotated nav bars with height on load and on resize

@@ -20,6 +20,6 @@ pointless.controller('knowledgeController', function($scope) {
     $scope.pageClass = 'knowledge-page';
 });
 
-pointless.controller('relationshipsController', function($scope) {
-    $scope.pageClass = 'relationships-page';
+pointless.controller('loveController', function($scope) {
+    $scope.pageClass = 'love-page';
 });

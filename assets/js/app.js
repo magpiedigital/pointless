@@ -2,8 +2,8 @@ var pointless = angular.module('pointless', ['ngRoute', 'ngAnimate', 'ngStorage'
 
 pointless.config(function($routeProvider) {
 
+	// Change welcome screen if you have visted and entered your name before
 	var introURL = 'partials/welcome.html'
-
 	if(!localStorage.getItem('ngStorage-userName')) { introURL = 'partials/intro.html'}
 
 	$routeProvider
@@ -27,9 +27,8 @@ pointless.config(function($routeProvider) {
 			templateUrl: 'partials/knowledge.html',
 			controller: 'knowledgeController'
 		})
-		.when('/relationships', {
-			templateUrl: 'partials/relationships.html',
-			controller: 'relationshipsController'
+		.when('/love', {
+			templateUrl: 'partials/love.html',
+			controller: 'loveController'
 		});
-
 });
